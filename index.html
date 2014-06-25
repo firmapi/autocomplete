@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Autocomplete d'entreprises en utilisation l'API des entreprises françaises : Firmapi.">
+
+    <title>Autocomplete d'entreprises via Firmapi</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="main.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="page-header">
+            <h1>Autocomplete d'entreprises</h1>
+          </div>
+          <p class="lead">Avec <a href="https://firmapi.com">Firmapi</a> et quelques lignes de code, vous pouvez ajouter à votre application un autocomplete parfaitement fonctionnel et donnant accès à plus de 6 millions d'entreprises et organisations. Ce code est <strong>open source et librement réutilisable</strong>.</p>
+
+          <!-- Formulaire -->
+          <form role="form">
+
+            <!-- Clé API -->
+            <h3 class="page-header">Clé API</h3>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-6">
+                  <input type="text" class="form-control" name="api_key" placeholder="Clé API">
+                  <p class="help-block">Obtenez votre clé API <a href="https://firmapi.com/board">sur le board de Firmapi</a>.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Typeahead -->
+            <h3 class="page-header">Typeahead</h3>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-12">
+                  <input type="text" class="form-control input-lg" id="typeahead" placeholder="Nom de l'entreprise">
+                </div>
+              </div>
+            </div>
+
+            <!-- Affichage de l'entreprise -->
+            <h3 class="page-header">Entreprise : <span id="name"></span></h3>
+            <div class="row">
+              <div class="col-md-6">
+                <h4>Informations légales :</h4>
+                <p>Code NAF : <strong id="naf_code"></strong></p>
+                <p>Numéro de TVA : <strong id="vat_number"></strong></p>
+                <p>Date d'enregistrement : <strong id="registration_date"></strong></p>
+                <p>Site web : <strong id="website"></strong></p>
+
+                <h4>Adresse :</h4>
+                <p>Adresse : <strong id="address"></strong></p>
+                <p>Code postal : <strong id="postal_code"></strong></p>
+                <p>Ville : <strong id="city"></strong></p>
+                <p>Coordonnées GPS : <strong id="location"></strong></p>
+                <p><img id="google_maps" src=""></p>
+              </div>
+            </div>
+
+            <!-- Affichage de l'entreprise -->
+            <h3 class="page-header">Utilisation :</h3>
+            <p class="lead">Vous pouvez librement copier, modifier et utiliser ce code. N'hésitez pas à proposer des améliorations via une pull request sur Github.</p>
+            <div class="alert alert-warning"><p>N'indiquez pas directement dans votre javascript votre clé API. En production, passez par votre serveur.</p></div>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <p class="text-muted">Tutoriel par <a href="https://firmapi.com">Firmapi</a>, contactez-nous pour toute information complémentaire.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.2/typeahead.bundle.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/Cookies.js/0.4.0/cookies.min.js"></script>
+
+    <script src="autocomplete.js"></script>
+
+  </body>
+</html>
