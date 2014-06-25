@@ -14,9 +14,7 @@ $(function() {
     datumTokenizer: function(d) {
       return Bloodhound.tokenizers.whitespace(d.name);
     },
-    // datumTokenizer: Bloodhound.tokenizers.obj.whitespace(''),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
-    // remote: remote_url(),
     remote: {
       url: remote_url(),
       filter: function(data) {
